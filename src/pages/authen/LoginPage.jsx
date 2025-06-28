@@ -4,6 +4,7 @@ import { getUsers } from '../../services/userService';
 import { Link } from 'react-router-dom';
 import Button from '../../components/common/Button';
 import Logo from "../../components/common/Logo";
+import { motion } from "framer-motion";
 
 function LoginPage() {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ function LoginPage() {
     if (matchedUser) {
       localStorage.setItem('role', matchedUser.isAdmin ? 'admin' : 'user');
       localStorage.setItem('username', matchedUser.username);
+      localStorage.setItem('userId', matchedUser.id);
 
       if (matchedUser.isAdmin) {
         navigate('/admin');
@@ -34,8 +36,15 @@ function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="flex w-full h-[850px] bg-white shadow-lg overflow-hidden">
+    <motion.div
+      initial={{ opacity: 0, x: -50 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 50 }}
+      transition={{ duration: 0.3 }}
+    >
+
+<div className="min-h-screen flex items-center justify-center bg-gray-50">
+  <div className="flex w-full min-h-screen bg-white shadow-lg overflow-hidden">
 
         {/* Left side - Image / Info */}
         <div className="w-1/2 bg-[#f9fafb] relative flex items-center justify-center">
@@ -100,6 +109,7 @@ function LoginPage() {
         </div>
       </div>
     </div>
+    </motion.div>
   );
 }
 

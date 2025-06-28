@@ -1,4 +1,4 @@
-import React from "react";
+
 import { countByCategory } from "../../utils/jobUtils";
 import { Link } from "react-router-dom";
 

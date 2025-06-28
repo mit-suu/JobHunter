@@ -10,9 +10,7 @@ function JobList({ filters }) {
 
   const [currentPage, setCurrentPage] = useState(1);
   const jobsPerPage = 7;
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [currentPage]);
+  
   useEffect(() => {
     const fetchJobs = async () => {
       setLoading(true);

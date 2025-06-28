@@ -82,7 +82,7 @@ function FilterSidebar({ onFilterChange }) {
               id={`type-${index}`}
               onChange={() => handleCheckboxChange("type", type)}
               checked={filters.type.includes(type)}
-              className="h-4 w-4 text-indigo-600 border-gray-300 dark:border-gray-600 rounded focus:ring-indigo-500 cursor-pointer"
+className="h-4 w-4 border-[#D6DDEB] text-[#E9EBFD] checked:bg-[#4640DE] checked:border-[#4640DE] rounded focus:ring-0 cursor-pointer"
             />
             <label
               htmlFor={`type-${index}`}
@@ -109,7 +109,7 @@ function FilterSidebar({ onFilterChange }) {
       id={`cat-${index}`}
       onChange={() => handleCheckboxChange("categories", cat.label)}
       checked={filters.categories.includes(cat.label)}
-      className="h-4 w-4 text-indigo-600 border-gray-300 dark:border-gray-600 rounded focus:ring-indigo-500 cursor-pointer"
+className="h-4 w-4 border-[#D6DDEB] text-[#E9EBFD] checked:bg-[#4640DE] checked:border-[#4640DE] rounded focus:ring-0 cursor-pointer"
     />
     <label
       htmlFor={`cat-${index}`}
@@ -139,7 +139,7 @@ function FilterSidebar({ onFilterChange }) {
               id={`level-${index}`}
               onChange={() => handleCheckboxChange("level", level)}
               checked={filters.level.includes(level)}
-              className="h-4 w-4 text-indigo-600 border-gray-300 dark:border-gray-600 rounded focus:ring-indigo-500 cursor-pointer"
+className="h-4 w-4 border-[#D6DDEB] text-[#E9EBFD] checked:bg-[#4640DE] checked:border-[#4640DE] rounded focus:ring-0 cursor-pointer"
             />
             <label
               htmlFor={`level-${index}`}
@@ -166,7 +166,7 @@ function FilterSidebar({ onFilterChange }) {
               id={`salary-${index}`}
               onChange={() => handleCheckboxChange("salaryRange", sal)}
               checked={filters.salaryRange.includes(sal)}
-              className="h-4 w-4 text-indigo-600 border-gray-300 dark:border-gray-600 rounded focus:ring-indigo-500 cursor-pointer"
+className="h-4 w-4 border-[#D6DDEB] text-[#E9EBFD] checked:bg-[#4640DE] checked:border-[#4640DE] rounded focus:ring-0 cursor-pointer"
             />
             <label
               htmlFor={`salary-${index}`}

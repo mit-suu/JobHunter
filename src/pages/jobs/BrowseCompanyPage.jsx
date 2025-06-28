@@ -1,8 +1,9 @@
-import JobsPage from '../../components/jobs/JobsPage';
 function HomePage() {
   return (
     <>
-        <JobsPage />
+<div>
+  browerse company
+</div>
     </>
   );
 }

@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import ScrollToTop from "../ScrollToTop"; 
+import { AnimatePresence } from "framer-motion";
+import { useLocation } from "react-router-dom";
 import LoginPage from '../pages/authen/LoginPage';
 import RegisterPage from '../pages/authen/RegisterPage';
 import NotFoundPage from '../pages/NotFoundPage';
@@ -10,12 +12,14 @@ import FindJobsPage from '../pages/jobs/FindJobsPage';
 import SettingsPage from '../pages/settings/SettingPage';
 import MainLayout from '../layouts/MainLayout';
 import BrowseCompanyPage from '../pages/jobs/BrowseCompanyPage';
+import ProfilePage from '../pages/ProfilePage';
 const AppRoutes = () => {
   return (
-    
+      <AnimatePresence mode="wait">
+
     <Router>
       <ScrollToTop />
-      <Routes>
+      <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
@@ -54,6 +58,14 @@ const AppRoutes = () => {
             }
           />
           <Route
+  path="/profile/:id"
+  element={
+    <PrivateRoute roleRequired="user">
+      <ProfilePage />
+    </PrivateRoute>
+  }
+/>
+          <Route
             path="/admin"
             element={
               <PrivateRoute roleRequired="admin">
@@ -66,6 +78,7 @@ const AppRoutes = () => {
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Router>
+      </AnimatePresence>
   );
 };
 

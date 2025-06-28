@@ -15,17 +15,20 @@ function JobsPage() {
     scrollToJobList();
   };
 
-  const scrollToJobList = () => {
+const scrollToJobList = () => {
+  setTimeout(() => {
     const el = document.getElementById('job-list');
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-  };
+  }, 150);
+};
+
   return (
-    <div  className=" flex flex-col md:flex-row max-w-7xl mx-auto p-4 gap-6">
+    <div  className=" flex flex-col md:flex-row max-w-7xl mx-auto px-4 py-16 gap-6">
       {/* Sidebar */}
       <aside className="w-full md:w-1/4 border-r-2 pr-4">
-        <FilterSidebar onFilterChange={setFilters} />
+        <FilterSidebar onFilterChange={handleFilterChange} />
       </aside>
 
       {/* Main content */}
