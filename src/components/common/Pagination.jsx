@@ -1,21 +1,20 @@
 function Pagination({ totalPages, currentPage, setCurrentPage }) {
   const maxVisible = 5;
 
-const scrollToList = () => {
-  const element = document.getElementById('job-list');
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' });
-  }
-};
+  const scrollToList = () => {
+    const element = document.getElementById("job-list");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
-const handlePageClick = (page) => {
-  setCurrentPage(page);
-  setTimeout(() => {
-    const el = document.getElementById('job-list');
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }, 100); // đợi JobList render lại rồi scroll
-};
-
+  const handlePageClick = (page) => {
+    setCurrentPage(page);
+    setTimeout(() => {
+      const el = document.getElementById("job-list");
+      if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50); // đợi JobList render lại rồi scroll
+  };
 
   const renderPages = () => {
     const pages = [];
@@ -39,16 +38,22 @@ const handlePageClick = (page) => {
       <button
         key={1}
         onClick={() => handlePageClick(1)}
-        className={`px-3 py-1 rounded font-medium transition ${
-          currentPage === 1 ? 'bg-[#4640DE] text-white' : 'hover:text-[#4640DE] bg-white'
+        className={`rounded px-3 py-1 font-medium transition ${
+          currentPage === 1
+            ? "bg-[#4640DE] text-white"
+            : "bg-white hover:text-[#4640DE]"
         }`}
       >
         1
-      </button>
+      </button>,
     );
 
     if (showLeftDots) {
-      pages.push(<span key="left-dots" className="px-2">...</span>);
+      pages.push(
+        <span key="left-dots" className="px-2">
+          ...
+        </span>,
+      );
     }
 
     for (let i = start; i <= end; i++) {
@@ -56,17 +61,23 @@ const handlePageClick = (page) => {
         <button
           key={i}
           onClick={() => handlePageClick(i)}
-          className={`px-3 py-1 rounded font-medium transition ${
-            currentPage === i ? 'bg-[#4640DE] text-white' : 'hover:text-[#4640DE] bg-white'
+          className={`rounded px-3 py-1 font-medium transition ${
+            currentPage === i
+              ? "bg-[#4640DE] text-white"
+              : "bg-white hover:text-[#4640DE]"
           }`}
         >
           {i}
-        </button>
+        </button>,
       );
     }
 
     if (showRightDots) {
-      pages.push(<span key="right-dots" className="px-2">...</span>);
+      pages.push(
+        <span key="right-dots" className="px-2">
+          ...
+        </span>,
+      );
     }
 
     if (totalPages > 1) {
@@ -74,12 +85,14 @@ const handlePageClick = (page) => {
         <button
           key={totalPages}
           onClick={() => handlePageClick(totalPages)}
-          className={`px-3 py-1 rounded font-medium transition ${
-            currentPage === totalPages ? 'bg-[#4640DE] text-white' : 'hover:text-[#4640DE] bg-white'
+          className={`rounded px-3 py-1 font-medium transition ${
+            currentPage === totalPages
+              ? "bg-[#4640DE] text-white"
+              : "bg-white hover:text-[#4640DE]"
           }`}
         >
           {totalPages}
-        </button>
+        </button>,
       );
     }
 
@@ -88,7 +101,7 @@ const handlePageClick = (page) => {
 
   return (
     totalPages > 1 && (
-      <div className="flex justify-center items-center mt-8 space-x-2 text-[#515B6F] text-sm">
+      <div className="mt-8 flex items-center justify-center space-x-2 text-sm text-[#515B6F]">
         {/* Prev Button */}
         <button
           onClick={() => {
@@ -103,8 +116,19 @@ const handlePageClick = (page) => {
           disabled={currentPage === 1}
           className="p-2 hover:text-[#4640DE]"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15.75 19.5 8.25 12l7.5-7.5"
+            />
           </svg>
         </button>
 
@@ -125,8 +149,19 @@ const handlePageClick = (page) => {
           disabled={currentPage === totalPages}
           className="p-2 hover:text-[#4640DE]"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="m8.25 4.5 7.5 7.5-7.5 7.5"
+            />
           </svg>
         </button>
       </div>

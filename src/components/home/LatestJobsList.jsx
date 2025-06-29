@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
-import { getJobs } from '../../services/jobService';
-import LatestJobItem from './LatestJobItem';
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from "react";
+import { getJobs } from "../../services/jobService";
+import LatestJobItem from "./LatestJobItem";
+import { useNavigate } from "react-router-dom";
 
 function LatestJobsList() {
   const [jobs, setJobs] = useState([]);
@@ -14,9 +14,7 @@ function LatestJobsList() {
       const data = await getJobs();
 
       // Sắp xếp theo id giảm dần và lấy 8 job mới nhất
-      const latest = [...data]
-        .sort((a, b) => b.id - a.id)
-        .slice(0, 8);
+      const latest = [...data].sort((a, b) => b.id - a.id).slice(0, 8);
 
       setJobs(latest);
       setLoading(false);
@@ -30,28 +28,32 @@ function LatestJobsList() {
       className="px-[124px] py-[80px]"
       style={{
         backgroundImage: 'url("/img/Desktop.png")',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: 'center',
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
       }}
     >
-      <div className="flex items-center justify-between mb-8">
-        <h2 className="font-bold text-gray-800 text-[40px] font-poppins dark:text-white">
+      <div className="mb-8 flex items-center justify-between">
+        <h2 className="font-poppins text-[40px] font-bold text-gray-800 dark:text-white">
           Latest <span className="text-blue-600">jobs open</span>
         </h2>
         <button
           onClick={() => navigate("/findjobs")}
-          className="flex items-center text-blue-600 font-medium hover:underline"
+          className="flex items-center font-medium text-blue-600 hover:underline"
         >
           Show all jobs
           <svg
-            className="w-4 h-4 ml-1"
+            className="ml-1 h-4 w-4"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
             viewBox="0 0 24 24"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M9 5l7 7-7 7"
+            />
           </svg>
         </button>
       </div>
@@ -61,7 +63,7 @@ function LatestJobsList() {
       ) : jobs.length === 0 ? (
         <p className="text-gray-500">No latest jobs available.</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {jobs.map((job) => (
             <LatestJobItem key={job.id} job={job} />
           ))}

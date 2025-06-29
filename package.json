@@ -9,6 +9,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.5.0",
+    "react-masonry-css": "^1.0.16",
     "react-router-dom": "^7.6.2",
     "react-scripts": "5.0.1",
     "tailwind-clip-path": "^1.0.0"
@@ -17,6 +18,8 @@
     "autoprefixer": "^10.4.0",
     "concurrently": "^9.2.0",
     "postcss": "^8.4.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.6.13",
     "tailwindcss": "^3.0.0"
   },
   "scripts": {
@@ -25,7 +28,8 @@
     "dev": "concurrently \"npm:start\" \"npm:server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
   "browserslist": {
     "production": [

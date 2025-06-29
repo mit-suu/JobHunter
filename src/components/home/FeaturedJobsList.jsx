@@ -27,17 +27,17 @@ function FeaturedJobsList() {
 
   return (
     <section className="mx-[124px] my-9">
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="font-bold text-gray-800 text-[40px] font-poppins dark:text-white">
+      <div className="mb-6 flex items-center justify-between">
+        <h2 className="font-poppins text-[40px] font-bold text-gray-800 dark:text-white">
           Featured <span className="text-blue-600">jobs</span>
         </h2>
         <button
           onClick={() => navigate("/findjobs")}
-          className="flex items-center text-blue-600 font-medium hover:underline"
+          className="flex items-center font-medium text-blue-600 hover:underline"
         >
           Show all jobs
           <svg
-            className="w-4 h-4 ml-1"
+            className="ml-1 h-4 w-4"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
@@ -57,7 +57,7 @@ function FeaturedJobsList() {
       ) : jobs.length === 0 ? (
         <p className="text-gray-500">No featured jobs available.</p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4">
           {jobs.map((job) => (
             <FeaturedJobsItem key={job.id} job={job} />
           ))}

@@ -1,9 +1,7 @@
 function HomePage() {
   return (
     <>
-<div>
-  browerse company
-</div>
+      <div>browerse company</div>
     </>
   );
 }

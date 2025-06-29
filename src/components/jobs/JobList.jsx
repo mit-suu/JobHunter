@@ -10,7 +10,7 @@ function JobList({ filters }) {
 
   const [currentPage, setCurrentPage] = useState(1);
   const jobsPerPage = 7;
-  
+
   useEffect(() => {
     const fetchJobs = async () => {
       setLoading(true);
@@ -26,7 +26,7 @@ function JobList({ filters }) {
     const result = allJobs.filter((job) => {
       const typeMatch = filters.type.includes(job.type);
       const categoryMatch = filters.categories.some((cat) =>
-        job.categories.includes(cat)
+        job.categories.includes(cat),
       );
       const levelMatch = filters.level.includes(job.level);
       const salaryMatch = filters.salaryRange.includes(job.salaryRange);
@@ -52,8 +52,8 @@ function JobList({ filters }) {
   const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
 
   return (
-    <div className="flex-1 ">
-      <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6">
+    <div className="flex-1">
+      <h1 className="mb-6 text-2xl font-bold text-gray-800 dark:text-gray-100">
         All Jobs
       </h1>
 

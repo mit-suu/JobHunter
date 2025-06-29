@@ -1,6 +1,11 @@
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
-export const createDefaultUser = ({ username, email, password, isAdmin = false }) => ({
+export const createDefaultUser = ({
+  username,
+  email,
+  password,
+  isAdmin = false,
+}) => ({
   id: uuidv4(),
   username,
   email,
@@ -18,5 +23,5 @@ export const createDefaultUser = ({ username, email, password, isAdmin = false }
   website: "",
   badges: [],
   tags: [],
-  isPremium: false
+  isPremium: false,
 });

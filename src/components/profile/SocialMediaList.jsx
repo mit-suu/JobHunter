@@ -1,17 +1,17 @@
-import { useState } from 'react';
-import { SOCIAL_MEDIA_OPTIONS } from '../../contants/socialMedia';
-import { FiPlus, FiTrash2, FiEdit2, FiCheck, FiX } from 'react-icons/fi';
+import { useState } from "react";
+import { SOCIAL_MEDIA_OPTIONS } from "../../contants/socialMedia";
+import { FiPlus, FiTrash2, FiEdit2, FiCheck, FiX } from "react-icons/fi";
 
 function SocialMediaList({ socialMedia = [], onAdd, onUpdate, onDelete }) {
   const [isHover, setIsHover] = useState(false);
   const [adding, setAdding] = useState(false);
-  const [selectedPlatform, setSelectedPlatform] = useState('');
-  const [newLink, setNewLink] = useState('');
+  const [selectedPlatform, setSelectedPlatform] = useState("");
+  const [newLink, setNewLink] = useState("");
 
   const handleAddNew = () => {
     setAdding(true);
-    setSelectedPlatform('');
-    setNewLink('');
+    setSelectedPlatform("");
+    setNewLink("");
   };
 
   const handleDone = () => {
@@ -23,31 +23,31 @@ function SocialMediaList({ socialMedia = [], onAdd, onUpdate, onDelete }) {
 
   return (
     <div
-      className="mt-10 border rounded-lg shadow p-6 relative hover:bg-gray-50"
+      className="relative mt-10 rounded-lg border p-6 shadow hover:bg-gray-50"
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
-      <h3 className="text-lg font-semibold mb-4">Social Media</h3>
+      <h3 className="mb-4 text-lg font-semibold">Social Media</h3>
 
       {/* Add New Button */}
       {isHover && !adding && (
         <button
           onClick={handleAddNew}
-          className="absolute top-4 right-4 p-2 rounded hover:bg-gray-100 transition"
+          className="absolute right-4 top-4 rounded p-2 transition hover:bg-gray-100"
           title="Add New"
         >
-          <FiPlus className="w-5 h-5 text-gray-600" />
+          <FiPlus className="h-5 w-5 text-gray-600" />
         </button>
       )}
 
       {/* Add New Form */}
       {adding && (
-        <div className="mb-4 flex flex-col md:flex-row md:items-center gap-2">
+        <div className="mb-4 flex flex-col gap-2 md:flex-row md:items-center">
           {/* Platform Dropdown */}
           <select
             value={selectedPlatform}
             onChange={(e) => setSelectedPlatform(e.target.value)}
-            className="border px-3 py-2 rounded w-full md:w-auto"
+            className="w-full rounded border px-3 py-2 md:w-auto"
           >
             <option value="">Select Platform</option>
             {SOCIAL_MEDIA_OPTIONS.map((option) => (
@@ -63,75 +63,77 @@ function SocialMediaList({ socialMedia = [], onAdd, onUpdate, onDelete }) {
             placeholder="Enter profile URL"
             value={newLink}
             onChange={(e) => setNewLink(e.target.value)}
-            className="border px-3 py-2 rounded w-full md:w-1/2"
+            className="w-full rounded border px-3 py-2 md:w-1/2"
           />
 
           {/* Actions */}
           <div className="flex gap-2">
             <button
               onClick={handleDone}
-              className="p-2 text-green-600 hover:bg-green-100 rounded"
+              className="rounded p-2 text-green-600 hover:bg-green-100"
               title="Done"
             >
-              <FiCheck className="w-5 h-5" />
+              <FiCheck className="h-5 w-5" />
             </button>
             <button
               onClick={() => setAdding(false)}
-              className="p-2 text-gray-500 hover:bg-gray-100 rounded"
+              className="rounded p-2 text-gray-500 hover:bg-gray-100"
               title="Cancel"
             >
-              <FiX className="w-5 h-5" />
+              <FiX className="h-5 w-5" />
             </button>
           </div>
         </div>
       )}
 
       {/* List */}
-      <div className="flex gap-4 flex-wrap">
+      <div className="flex flex-wrap gap-4">
         {socialMedia.length > 0 ? (
           socialMedia.map((s, idx) => {
             const platformMeta = SOCIAL_MEDIA_OPTIONS.find(
-              (opt) => opt.platform === s.platform
+              (opt) => opt.platform === s.platform,
             );
 
             return (
-              <div key={idx} className="relative group">
-  <a
-    href={s.url.startsWith('http') ? s.url : `https://${s.url}`}
-    target="_blank"
-    rel="noreferrer"
-    className="block"
-  >
-    <div className="w-12 h-12 border border-gray-400 rounded-full flex items-center justify-center transition hover:scale-110">
-      <img
-        src={platformMeta?.icon || 'https://via.placeholder.com/32'}
-        alt={s.platform}
-        className="w-6 h-6 object-contain"
-      />
-    </div>
-  </a>
+              <div key={idx} className="group relative">
+                <a
+                  href={s.url.startsWith("http") ? s.url : `https://${s.url}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-gray-400 transition hover:scale-110">
+                    <img
+                      src={
+                        platformMeta?.icon || "https://via.placeholder.com/32"
+                      }
+                      alt={s.platform}
+                      className="h-6 w-6 object-contain"
+                    />
+                  </div>
+                </a>
 
-  {/* Edit button: top-left */}
-  <div className="absolute -top-2 -left-2 hidden group-hover:flex">
-    <FiEdit2
-      className="w-4 h-4 text-blue-500 cursor-pointer hover:scale-110"
-      onClick={() => {
-        setAdding(true);
-        setSelectedPlatform(s.platform);
-        setNewLink(s.url);
-        onDelete(idx);
-      }}
-    />
-  </div>
+                {/* Edit button: top-left */}
+                <div className="absolute -left-2 -top-2 hidden group-hover:flex">
+                  <FiEdit2
+                    className="h-4 w-4 cursor-pointer text-blue-500 hover:scale-110"
+                    onClick={() => {
+                      setAdding(true);
+                      setSelectedPlatform(s.platform);
+                      setNewLink(s.url);
+                      onDelete(idx);
+                    }}
+                  />
+                </div>
 
-  {/* Delete button: top-right */}
-  <div className="absolute -top-2 -right-[14px] hidden group-hover:flex">
-    <FiTrash2
-      className="w-4 h-4 text-red-500 cursor-pointer hover:scale-110"
-      onClick={() => onDelete(idx)}
-    />
-  </div>
-</div>
+                {/* Delete button: top-right */}
+                <div className="absolute -right-[14px] -top-2 hidden group-hover:flex">
+                  <FiTrash2
+                    className="h-4 w-4 cursor-pointer text-red-500 hover:scale-110"
+                    onClick={() => onDelete(idx)}
+                  />
+                </div>
+              </div>
             );
           })
         ) : (

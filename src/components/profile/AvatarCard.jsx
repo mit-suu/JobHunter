@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { FiStar, FiLock ,FiX  } from 'react-icons/fi';
+import { useState } from "react";
+import { FiStar, FiLock, FiX } from "react-icons/fi";
 
 function AvatarCard({ user, onUpdateAvatar }) {
   const [isHover, setIsHover] = useState(false);
   const [editingAvatar, setEditingAvatar] = useState(false);
-  const [newAvatarUrl, setNewAvatarUrl] = useState('');
+  const [newAvatarUrl, setNewAvatarUrl] = useState("");
 
   const handleIconClick = () => {
     setEditingAvatar(true);
-    setNewAvatarUrl(user.avatar || '');
+    setNewAvatarUrl(user.avatar || "");
   };
 
   const handleSaveAvatar = async () => {
@@ -19,48 +19,52 @@ function AvatarCard({ user, onUpdateAvatar }) {
   };
   const handleCancel = () => {
     setEditingAvatar(false);
-    setNewAvatarUrl(''); // reset URL về rỗng để giữ avatar cũ
+    setNewAvatarUrl(""); // reset URL về rỗng để giữ avatar cũ
   };
 
   return (
     <div
-      className={`flex flex-col items-center p-6 border rounded-lg shadow w-full md:w-1/3 transition ${
-        isHover ? 'bg-gray-50' : ''
+      className={`flex w-full flex-col items-center rounded-lg border p-6 shadow transition md:w-1/3 ${
+        isHover ? "bg-gray-50" : ""
       }`}
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >
       {/* Name & Premium */}
-      <div className="text-center m-4">
+      <div className="m-4 text-center">
         <h2 className="text-3xl font-bold">
           {user.username.charAt(0).toUpperCase() + user.username.slice(1)}
         </h2>
-        <div className="flex items-center justify-center mt-1">
+        <div className="mt-1 flex items-center justify-center">
           {user.isPremium ? (
-            <span className="flex items-center gap-1 text-green-600 text-sm font-medium">
-              <FiStar className="w-4 h-4" /> Premium User
+            <span className="flex items-center gap-1 text-sm font-medium text-green-600">
+              <FiStar className="h-4 w-4" /> Premium User
             </span>
           ) : (
-            <span className="flex items-center gap-1 text-gray-400 text-sm font-medium">
-              <FiLock className="w-4 h-4" /> Standard User
+            <span className="flex items-center gap-1 text-sm font-medium text-gray-400">
+              <FiLock className="h-4 w-4" /> Standard User
             </span>
           )}
         </div>
       </div>
 
       {/* Avatar Container */}
-      <div className="relative p-4 border border-gray-200 bg-gray-200 rounded-full shadow-lg">
+      <div className="relative rounded-full border border-gray-200 bg-gray-200 p-4 shadow-lg">
         <img
-          src={editingAvatar && newAvatarUrl.trim() ? newAvatarUrl : (user.avatar || 'https://via.placeholder.com/150')}
+          src={
+            editingAvatar && newAvatarUrl.trim()
+              ? newAvatarUrl
+              : user.avatar || "https://via.placeholder.com/150"
+          }
           alt="avatar"
-          className="w-40 h-40 rounded-full object-cover"
+          className="h-40 w-40 rounded-full object-cover"
         />
 
         {/* Hover icon center */}
         {isHover && !editingAvatar && (
           <button
             onClick={handleIconClick}
-            className="absolute inset-0 flex items-center justify-center bg-black/30 rounded-full transition"
+            className="absolute inset-0 flex items-center justify-center rounded-full bg-black/30 transition"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -68,7 +72,7 @@ function AvatarCard({ user, onUpdateAvatar }) {
               viewBox="0 0 24 24"
               strokeWidth={1.5}
               stroke="white"
-              className="w-8 h-8"
+              className="h-8 w-8"
             >
               <path
                 strokeLinecap="round"
@@ -86,14 +90,14 @@ function AvatarCard({ user, onUpdateAvatar }) {
       </div>
 
       {/* Input box + Preview */}
-        {editingAvatar && (
-        <div className="mt-4 w-full relative">
+      {editingAvatar && (
+        <div className="relative mt-4 w-full">
           <button
             onClick={handleCancel}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-red-500 transition"
+            className="absolute right-2 top-1/2 -translate-y-1/2 transform text-gray-500 transition hover:text-red-500"
             title="Cancel"
           >
-            <FiX className="w-5 h-5" />
+            <FiX className="h-5 w-5" />
           </button>
 
           <input
@@ -102,16 +106,15 @@ function AvatarCard({ user, onUpdateAvatar }) {
             onChange={(e) => setNewAvatarUrl(e.target.value)}
             onBlur={handleSaveAvatar}
             onKeyDown={(e) => {
-              if (e.key === 'Enter') handleSaveAvatar();
-              if (e.key === 'Escape') handleCancel();
+              if (e.key === "Enter") handleSaveAvatar();
+              if (e.key === "Escape") handleCancel();
             }}
             placeholder="Paste new avatar URL..."
             autoFocus
-            className="w-full  pl-4 pr-9 py-2 border rounded focus:outline-none"
+            className="w-full rounded border py-2 pl-4 pr-9 focus:outline-none"
           />
 
           {/* Preview */}
-
         </div>
       )}
     </div>

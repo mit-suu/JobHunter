@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { API_BASE_URL } from '../contants/api';
+import axios from "axios";
+import { API_BASE_URL } from "../contants/api";
 
 // GET: Lấy danh sách users
 export const getUsers = async () => {
@@ -7,7 +7,7 @@ export const getUsers = async () => {
     const response = await axios.get(`${API_BASE_URL}/users`);
     return response.data;
   } catch (error) {
-    console.error('Lỗi khi lấy danh sách users:', error);
+    console.error("Lỗi khi lấy danh sách users:", error);
     return [];
   }
 };
@@ -18,7 +18,7 @@ export const addUser = async (newUser) => {
     const response = await axios.post(`${API_BASE_URL}/users`, newUser);
     return response.data;
   } catch (error) {
-    console.error('Lỗi khi thêm user:', error);
+    console.error("Lỗi khi thêm user:", error);
     return null;
   }
 };
@@ -26,7 +26,10 @@ export const addUser = async (newUser) => {
 // PATCH: Cập nhật user (1 phần)
 export const updateUser = async (id, updatedFields) => {
   try {
-    const response = await axios.patch(`${API_BASE_URL}/users/${id}`, updatedFields);
+    const response = await axios.patch(
+      `${API_BASE_URL}/users/${id}`,
+      updatedFields,
+    );
     return response.data;
   } catch (error) {
     console.error(`Lỗi khi cập nhật user ID ${id}:`, error);

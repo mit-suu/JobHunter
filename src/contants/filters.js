@@ -11,7 +11,7 @@ export const CATEGORY_OPTIONS = [
     label: "Engineering",
     icon: (
       <svg
-        className="w-[48px] h-[48px]"
+        className="h-[48px] w-[48px]"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
@@ -35,7 +35,7 @@ export const CATEGORY_OPTIONS = [
         viewBox="0 0 24 24"
         strokeWidth={1.5}
         stroke="currentColor"
-        className="w-[48px] h-[48px]"
+        className="h-[48px] w-[48px]"
       >
         <path
           strokeLinecap="round"
@@ -49,7 +49,7 @@ export const CATEGORY_OPTIONS = [
     label: "Design",
     icon: (
       <svg
-        className="w-[48px] h-[48px]"
+        className="h-[48px] w-[48px]"
         xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"
         viewBox="0 0 24 24"
@@ -66,7 +66,7 @@ export const CATEGORY_OPTIONS = [
     label: "Marketing",
     icon: (
       <svg
-        className="w-[48px] h-[48px]"
+        className="h-[48px] w-[48px]"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
@@ -85,7 +85,7 @@ export const CATEGORY_OPTIONS = [
     label: "Technology",
     icon: (
       <svg
-        className="w-[48px] h-[48px]"
+        className="h-[48px] w-[48px]"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
@@ -104,7 +104,7 @@ export const CATEGORY_OPTIONS = [
     label: "Financial",
     icon: (
       <svg
-        className="w-[48px] h-[48px]"
+        className="h-[48px] w-[48px]"
         xmlns="http://www.w3.org/2000/svg"
         fill="currentColor"
         viewBox="0 0 24 24"
@@ -127,7 +127,7 @@ export const CATEGORY_OPTIONS = [
     label: "Business",
     icon: (
       <svg
-        className="w-[48px] h-[48px]"
+        className="h-[48px] w-[48px]"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"
@@ -146,7 +146,7 @@ export const CATEGORY_OPTIONS = [
     label: "Human Resource",
     icon: (
       <svg
-        className="w-[48px] h-[48px]"
+        className="h-[48px] w-[48px]"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         viewBox="0 0 24 24"

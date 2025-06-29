@@ -1,6 +1,16 @@
-import Logo from '../common/Logo';
-import { aboutLinks, resourceLinks, socialLinks } from '../../contants/footerLink';
-import { FaFacebookF, FaInstagram, FaDribbble, FaLinkedinIn, FaTwitter } from 'react-icons/fa';
+import Logo from "../common/Logo";
+import {
+  aboutLinks,
+  resourceLinks,
+  socialLinks,
+} from "../../contants/footerLink";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaDribbble,
+  FaLinkedinIn,
+  FaTwitter,
+} from "react-icons/fa";
 
 const iconComponents = {
   FaFacebookF,
@@ -12,24 +22,26 @@ const iconComponents = {
 
 function Footer() {
   return (
-    <footer className="bg-[#1D1E25] text-white py-12 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
-        
+    <footer className="bg-[#1D1E25] px-6 py-12 text-white">
+      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 md:grid-cols-4">
         {/* Column 1 - Logo + intro */}
         <div>
           <Logo active={false} />
-          <p className="mt-4 text-gray-400 text-sm leading-6">
-            Great platform for the job seeker that passionate about startups. Find your dream job easier.
+          <p className="mt-4 text-sm leading-6 text-gray-400">
+            Great platform for the job seeker that passionate about startups.
+            Find your dream job easier.
           </p>
         </div>
 
         {/* Column 2 - About */}
         <div>
-          <h4 className="text-white font-semibold mb-4">About</h4>
-          <ul className="space-y-2 text-gray-400 text-sm">
+          <h4 className="mb-4 font-semibold text-white">About</h4>
+          <ul className="space-y-2 text-sm text-gray-400">
             {aboutLinks.map((item, index) => (
               <li key={index}>
-                <a href="/home" className="hover:text-white">{item}</a>
+                <a href="/home" className="hover:text-white">
+                  {item}
+                </a>
               </li>
             ))}
           </ul>
@@ -37,11 +49,13 @@ function Footer() {
 
         {/* Column 3 - Resources */}
         <div>
-          <h4 className="text-white font-semibold mb-4">Resources</h4>
-          <ul className="space-y-2 text-gray-400 text-sm">
+          <h4 className="mb-4 font-semibold text-white">Resources</h4>
+          <ul className="space-y-2 text-sm text-gray-400">
             {resourceLinks.map((item, index) => (
               <li key={index}>
-                <a href="/home" className="hover:text-white">{item}</a>
+                <a href="/home" className="hover:text-white">
+                  {item}
+                </a>
               </li>
             ))}
           </ul>
@@ -49,17 +63,19 @@ function Footer() {
 
         {/* Column 4 - Subscribe */}
         <div>
-          <h4 className="text-white font-semibold mb-4">Get job notifications</h4>
-          <p className="text-gray-400 text-sm mb-4">
+          <h4 className="mb-4 font-semibold text-white">
+            Get job notifications
+          </h4>
+          <p className="mb-4 text-sm text-gray-400">
             The latest job news, articles, sent to your inbox weekly.
           </p>
           <div className="flex">
             <input
               type="email"
               placeholder="Email Address"
-              className="flex-1 px-4 py-2 rounded-l-md text-black focus:outline-none"
+              className="flex-1 rounded-l-md px-4 py-2 text-black focus:outline-none"
             />
-            <button className="px-4 py-2 bg-[#4640DE] text-white font-semibold rounded-r-md">
+            <button className="rounded-r-md bg-[#4640DE] px-4 py-2 font-semibold text-white">
               Subscribe
             </button>
           </div>
@@ -67,14 +83,20 @@ function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="max-w-7xl mx-auto mt-10 pt-6 border-t border-gray-700 flex flex-col md:flex-row items-center justify-between text-base text-gray-400">
+      <div className="mx-auto mt-10 flex max-w-7xl flex-col items-center justify-between border-t border-gray-700 pt-6 text-base text-gray-400 md:flex-row">
         <p>2025 @Tran Tuan Hiep. All rights reserved.</p>
 
-        <div className="flex space-x-4 mt-4 md:mt-0">
+        <div className="mt-4 flex space-x-4 md:mt-0">
           {socialLinks.map((item, index) => {
             const Icon = iconComponents[item.icon];
             return (
-              <a key={index} href={item.url} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+              <a
+                key={index}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white"
+              >
                 <Icon size={25} />
               </a>
             );
