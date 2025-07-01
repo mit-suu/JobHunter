@@ -23,7 +23,7 @@ function SocialMediaList({ socialMedia = [], onAdd, onUpdate, onDelete }) {
 
   return (
     <div
-      className="relative mt-10 rounded-lg border p-6 shadow hover:bg-gray-50"
+      className="relative mt-10 rounded-lg border p-6 shadow hover:bg-gray-50 bg-white dark:shadow-[0_4px_6px_-1px_rgba(255,255,255,0.2)] transition"
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
     >

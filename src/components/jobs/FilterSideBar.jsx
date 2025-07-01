@@ -58,9 +58,9 @@ function FilterSidebar({ onFilterChange }) {
   };
 
   return (
-    <div className="space-y-6 text-sm text-gray-700 dark:text-gray-300">
+    <div className="space-y-6 text-sm text-gray-700 dark:text-gray-400">
       <div className="mb-4 flex items-center justify-between">
-        <h2 className="text-lg font-bold">Filters</h2>
+        <h2 className="text-lg font-bold dark:text-white">Filters</h2>
         <button
           onClick={handleClearAll}
           className="text-sm text-blue-500 hover:underline"

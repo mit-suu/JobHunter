@@ -22,7 +22,7 @@ const iconComponents = {
 
 function Footer() {
   return (
-    <footer className="bg-[#1D1E25] px-6 py-12 text-white">
+    <footer className="bg-[#202430]  py-12 text-white">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 md:grid-cols-4">
         {/* Column 1 - Logo + intro */}
         <div>

@@ -12,63 +12,64 @@ function LatestJobsList() {
     const fetchJobs = async () => {
       setLoading(true);
       const data = await getJobs();
-
-      // Sắp xếp theo id giảm dần và lấy 8 job mới nhất
       const latest = [...data].sort((a, b) => b.id - a.id).slice(0, 8);
-
       setJobs(latest);
       setLoading(false);
     };
-
     fetchJobs();
   }, []);
 
   return (
-    <div
-      className="px-[124px] py-[80px]"
-      style={{
-        backgroundImage: 'url("/img/Desktop.png")',
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-      }}
-    >
-      <div className="mb-8 flex items-center justify-between">
-        <h2 className="font-poppins text-[40px] font-bold text-gray-800 dark:text-white">
-          Latest <span className="text-blue-600">jobs open</span>
-        </h2>
-        <button
-          onClick={() => navigate("/findjobs")}
-          className="flex items-center font-medium text-blue-600 hover:underline"
-        >
-          Show all jobs
-          <svg
-            className="ml-1 h-4 w-4"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
-      </div>
+    <div className="relative px-[124px] py-[80px] overflow-hidden">
+      {/* Background image: chỉ light mode */}
+      <div
+        className="absolute inset-0 z-0 block dark:hidden"
+        style={{
+          backgroundImage: 'url("/img/Desktop.png")',
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}
+      ></div>
 
-      {loading ? (
-        <p className="text-gray-500">Loading latest jobs...</p>
-      ) : jobs.length === 0 ? (
-        <p className="text-gray-500">No latest jobs available.</p>
-      ) : (
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {jobs.map((job) => (
-            <LatestJobItem key={job.id} job={job} />
-          ))}
+      <div className="relative z-10">
+        <div className="mb-8 flex items-center justify-between">
+          <h2 className="font-poppins text-[40px] font-bold text-gray-800 dark:text-white">
+            Latest <span className="text-blue-600">jobs open</span>
+          </h2>
+          <button
+            onClick={() => navigate("/findjobs")}
+            className="flex items-center font-medium text-blue-600 hover:underline"
+          >
+            Show all jobs
+            <svg
+              className="ml-1 h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </button>
         </div>
-      )}
+
+        {loading ? (
+          <p className="text-gray-500">Loading latest jobs...</p>
+        ) : jobs.length === 0 ? (
+          <p className="text-gray-500">No latest jobs available.</p>
+        ) : (
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {jobs.map((job) => (
+              <LatestJobItem key={job.id} job={job} />
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

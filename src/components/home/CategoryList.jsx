@@ -10,14 +10,14 @@ function CategoryList() {
   const navigate = useNavigate();
 
   return (
-    <section className="mx-[124px] my-9">
-      <div className="mb-6 flex items-center justify-between space-y-16">
-        <h2 className="font-poppins text-[40px] font-bold text-gray-800 dark:text-white">
-          Explore by <span className="text-blue-600">category</span>
+    <section className="mx-[124px] my-9 ">
+      <div className="mb-6 flex items-center justify-between space-y-1 ">
+        <h2 className="font-poppins text-[40px] font-bold text-gray-800 dark:text-white ">
+          Explore by <span className="text-[#26A4FF]">category</span>
         </h2>
         <button
           onClick={() => navigate("/findjobs")}
-          className="flex items-center font-medium text-blue-600 hover:underline"
+          className="flex items-center font-medium text-[#26A4FF] hover:underline"
         >
           Show all jobs
           <svg

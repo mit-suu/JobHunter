@@ -5,7 +5,7 @@ import Footer from "../components/layout/Footer";
 
 function MainLayout() {
   return (
-    <div className="flex min-h-screen flex-col bg-white transition-colors duration-300 dark:bg-gray-900">
+    <div className="flex min-h-screen flex-col bg-white transition-colors duration-300 dark:bg-[#202430]">
       <Header />
       <main className="flex-1 pt-16">
         <Outlet />

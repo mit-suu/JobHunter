@@ -5,8 +5,8 @@ function HeroFindJobs() {
   const displayedCategories = CATEGORY_OPTIONS.slice(0, 4);
 
   return (
-    <section className="relative bg-[#F8F8FD] py-16">
-      <div className="absolute inset-0 z-0">
+    <section className="relative bg-[#F8F8FD] py-16 dark:bg-[#202430]">
+      <div className="absolute inset-0 z-0 block dark:hidden">
         <img
           src="/img/bg1.svg"
           alt="Background"
@@ -16,7 +16,7 @@ function HeroFindJobs() {
       <div className="relative z-10 mx-auto max-w-6xl px-4">
         {/* Title */}
         <div className="text-center">
-          <h1 className="font-poppins text-[533px] font-extrabold leading-tight text-gray-900 md:text-5xl">
+          <h1 className="font-poppins text-[533px] font-extrabold leading-tight text-gray-900 md:text-5xl dark:text-white">
             Find your{" "}
             <span className="relative inline-block text-[#26A4FF]">
               dream job
@@ -35,18 +35,18 @@ function HeroFindJobs() {
 
         {/* Top Categories */}
         <div className="mt-10 w-full">
-          <h3 className="mb-6 text-left font-poppins text-3xl font-bold text-gray-700">
+          <h3 className="mb-6 text-left font-poppins text-3xl font-bold text-gray-700 dark:text-white">
             Top Categories
           </h3>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 ">
             {displayedCategories.map((category, index) => (
               <Link
                 to={`/category/${category.label}`} // HOẶC `/category/${category.slug}` nếu bạn có slug chuẩn SEO
                 key={index}
-                className="group relative flex items-center justify-between overflow-hidden rounded-sm border border-gray-200 p-4 transition-all hover:bg-[#4640DE] hover:text-white"
+                className="group relative flex items-center justify-between overflow-hidden rounded-sm border dark:bg-white dark:hover:bg-[#4640DE] border-gray-200 p-4 transition-all hover:bg-[#4640DE]  hover:text-white dark:hover:border-none "
               >
                 {/* Normal Content */}
-                <div className="flex items-center gap-4 transition-all group-hover:opacity-0">
+                <div className="flex items-center gap-4 transition-all group-hover:opacity-0 ">
                   <div className="text-blue-600 group-hover:text-white">
                     {category.icon}
                   </div>

@@ -24,7 +24,7 @@ function AvatarCard({ user, onUpdateAvatar }) {
 
   return (
     <div
-      className={`flex w-full flex-col items-center rounded-lg border p-6 shadow transition md:w-1/3 ${
+      className={`flex w-full flex-col items-center rounded-lg border p-6 shadow transition md:w-1/3 bg-white dark:shadow-[0_4px_6px_-1px_rgba(255,255,255,0.2)] transition${
         isHover ? "bg-gray-50" : ""
       }`}
       onMouseEnter={() => setIsHover(true)}

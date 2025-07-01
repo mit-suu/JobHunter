@@ -15,7 +15,7 @@ function JobCard({ job }) {
   const appliedPercent = Math.min((applied / capacity) * 100, 100);
 
   return (
-    <div className="mb-4 flex items-center justify-between rounded-sm border border-gray-200 bg-white p-4 transition hover:shadow-md dark:border-gray-700 dark:bg-gray-800">
+    <div className="mb-4 flex items-center justify-between rounded-sm border border-gray-200 bg-white p-4 transition hover:shadow-md  dark:bg-white">
       {/* Left - Info */}
       <div className="flex items-center gap-6 font-Epilogue">
         <div className="flex h-14 w-14 items-center justify-center">
@@ -23,10 +23,10 @@ function JobCard({ job }) {
         </div>
 
         <div className="space-y-2">
-          <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100">
+          <h2 className="text-lg font-semibold text-gray-800 ">
             {title}
           </h2>
-          <p className="text-base text-gray-500 dark:text-gray-400">
+          <p className="text-base text-gray-500 ">
             {company} • {location}
           </p>
 

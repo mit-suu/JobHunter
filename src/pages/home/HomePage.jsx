@@ -13,13 +13,13 @@ function HomePage() {
       exit={{ opacity: 0, x: 50 }}
       transition={{ duration: 0.3 }}
     >
-      <>
+      <div className="dark:bg-[#202430]">
         <Hero />
         <CategoryList />
         <CTA />
         <FeaturedJobsList />
         <LatestJobsList />
-      </>
+      </div>
     </motion.div>
   );
 }

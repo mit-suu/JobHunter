@@ -30,7 +30,7 @@ function UserBioDetails({ user, onFieldUpdate }) {
   };
 
   return (
-    <div className="w-full rounded border px-10 py-5 shadow">
+    <div className="w-full rounded border px-10 py-5 shadow bg-white dark:shadow-[0_4px_6px_-1px_rgba(255,255,255,0.2)] transition">
       <h3 className="mb-4 text-lg font-semibold">Bio & other details</h3>
       <div className="grid grid-cols-2 gap-4">
         {fields.map(({ key, label, readOnly }) => (

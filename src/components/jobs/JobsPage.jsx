@@ -25,9 +25,9 @@ function JobsPage() {
   };
 
   return (
-    <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-16 md:flex-row">
+    <div className="mx-auto flex max-w-7xl flex-col gap-6 px-4 py-16 md:flex-row ">
       {/* Sidebar */}
-      <aside className="w-full border-r-2 pr-4 md:w-1/4">
+      <aside className="w-full border-r-2 pr-4 md:w-1/4 dark:border-none">
         <FilterSidebar onFilterChange={handleFilterChange} />
       </aside>
 

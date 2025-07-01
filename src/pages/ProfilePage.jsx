@@ -38,8 +38,8 @@ function ProfilePage() {
       exit={{ opacity: 0, x: 50 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="min-h-screen bg-white px-60 py-16 text-[#25324B]">
-        <h1 className="font-poppins text-5xl font-bold">Profile</h1>
+      <div className="min-h-screen bg-white px-60 py-16 text-[#25324B] dark:bg-[#202430] ">
+        <h1 className="font-poppins text-5xl font-bold dark:text-white">Profile</h1>
         <p className="mb-8 text-gray-500">
           View all your profile details here.
         </p>

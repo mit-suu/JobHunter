@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+
 function NotFoundPage() {
   const navigate = useNavigate();
   const isLoggedIn = localStorage.getItem("role") !== null;
@@ -19,12 +20,12 @@ function NotFoundPage() {
       exit={{ opacity: 0, x: 50 }}
       transition={{ duration: 0.3 }}
     >
-      <div className="flex min-h-screen flex-col items-center justify-center bg-gray-50 p-6 text-center">
+      <div className="flex min-h-screen flex-col items-center justify-center bg-gray-50 dark:bg-[#202430] p-6 text-center">
         <h1 className="mb-4 text-7xl font-bold text-[#4640DE]">404</h1>
-        <h2 className="mb-2 text-2xl font-semibold text-gray-800">
+        <h2 className="mb-2 text-2xl font-semibold text-gray-800 dark:text-white">
           Page Not Found
         </h2>
-        <p className="mb-6 text-gray-600">
+        <p className="mb-6 text-gray-600 dark:text-gray-300">
           The page you’re looking for doesn’t exist or has been moved.
         </p>
         <button

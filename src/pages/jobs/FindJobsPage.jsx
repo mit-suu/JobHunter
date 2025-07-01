@@ -9,12 +9,12 @@ function FindJobsPages() {
       exit={{ opacity: 0, x: 50 }}
       transition={{ duration: 0.3 }}
     >
-      <>
+      <div className="dark:bg-[#202430]">
         <HeroFindJobs />
         <div id="job-list">
           <JobsPage />
         </div>
-      </>
+      </div>
     </motion.div>
   );
 }
