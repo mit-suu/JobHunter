@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function CTA() {
+  const navigate = useNavigate();
   return (
     <section className="px-[124px] py-16">
       <div
@@ -13,11 +15,13 @@ function CTA() {
         {/* Left content only */}
         <div className="max-w-md">
           <h2 className="mb-4 text-4xl font-bold leading-tight">
-            Start posting <br /> jobs today
+            Start searching <br /> jobs today
           </h2>
-          <p className="mb-6">Start posting jobs for only $10.</p>
-          <button className="rounded-md bg-white px-6 py-2 font-semibold text-[#4F46E5] shadow-md transition hover:bg-gray-100">
-            Sign Up For Free
+          <p className="mb-6">Start searching jobs by any company.</p>
+          <button
+            onClick={() => navigate("/companies")}
+            className="rounded-md bg-white px-6 py-2 font-semibold text-[#4F46E5] shadow-md transition hover:bg-gray-100">
+            List all companies
           </button>
         </div>
 

@@ -17,6 +17,7 @@ import FindJobsPage from "../pages/jobs/FindJobsPage";
 import SettingsPage from "../pages/settings/SettingPage";
 import MainLayout from "../layouts/MainLayout";
 import BrowseCompanyPage from "../pages/jobs/BrowseCompanyPage";
+import CompanyListJob from "../pages/jobs/CompanyJobsList";
 import ProfilePage from "../pages/ProfilePage";
 import CategoryPage from "../pages/jobs/CategoryPage";
 const AppRoutes = () => {
@@ -60,6 +61,14 @@ const AppRoutes = () => {
               element={
                 <PrivateRoute roleRequired="user">
                   <BrowseCompanyPage />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/companies/:companyName"
+              element={
+                <PrivateRoute roleRequired="user">
+                  <CompanyListJob />
                 </PrivateRoute>
               }
             />
