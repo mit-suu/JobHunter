@@ -4,3 +4,23 @@
 html {
   scroll-behavior: smooth;
 }
+@layer components {
+  .dark .mouse-aura {
+    @apply fixed inset-0 pointer-events-none;
+    background-image: radial-gradient(
+      circle at var(--mouse-x) var(--mouse-y),
+      rgba(63, 81, 181, 0.3) 0%,
+      rgba(63, 81, 181, 0.15) 30%,
+      rgba(63, 81, 181, 0) 50%
+    );
+
+    @media (hover: none) and (pointer: coarse) {
+      background-image: radial-gradient(
+        circle at top left,
+        rgba(63, 81, 181, 0.3) 0%,
+        rgba(63, 81, 181, 0.15) 30%,
+        rgba(63, 81, 181, 0) 50%
+      );
+    }
+  }
+}
