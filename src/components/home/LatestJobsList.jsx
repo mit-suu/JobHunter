@@ -33,30 +33,31 @@ function LatestJobsList() {
       ></div>
 
       <div className="relative z-10">
-        <div className="mb-8 flex items-center justify-between">
-          <h2 className="font-poppins text-[40px] font-bold text-gray-800 dark:text-white">
-            Latest <span className="text-blue-600">jobs open</span>
-          </h2>
-          <button
-            onClick={() => navigate("/findjobs")}
-            className="flex items-center font-medium text-blue-600 hover:underline"
-          >
-            Show all jobs
-            <svg
-              className="ml-1 h-4 w-4"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </button>
-        </div>
+       <div className="mb-8 flex flex-col items-start justify-between gap-4 sm:flex-col md:flex-col lg:flex-row lg:items-center">
+  <h2 className="font-poppins text-3xl sm:text-4xl font-bold text-gray-800 dark:text-white">
+    Latest <span className="text-blue-600">jobs open</span>
+  </h2>
+  <button
+    onClick={() => navigate("/findjobs")}
+    className="flex items-center font-medium text-blue-600 hover:underline"
+  >
+    Show all jobs
+    <svg
+      className="ml-1 h-4 w-4"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M9 5l7 7-7 7"
+      />
+    </svg>
+  </button>
+</div>
+
 
         {loading ? (
           <p className="text-gray-500">Loading latest jobs...</p>
