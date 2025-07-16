@@ -2,13 +2,13 @@ function FeaturedJobsItem({ job }) {
   const { logo, title, company, location, type, categories } = job;
 
   return (
-    <div className="flex h-full min-w-[250px] transform flex-col justify-between border border-[#EDEDED] bg-white px-5 py-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl">
+    <div className="flex h-full min-w-[250px] transform flex-col justify-between border border-[#EDEDED] bg-white px-5 py-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl rounded-lg">
       {/* Nội dung phía trên */}
       <div className="flex-1">
         {/* Header row */}
         <div className="mb-4 flex items-start justify-between">
           <img src={logo} alt={company} className="h-10 w-10 object-contain" />
-          <span className="rounded-sm border border-[#4640DE] px-7 py-[6px] text-xs font-medium text-[#4640DE]">
+          <span className="rounded-md border border-[#4640DE] px-7 py-[6px] text-xs font-medium text-[#4640DE]">
             {type}
           </span>
         </div>

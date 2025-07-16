@@ -1,6 +1,7 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
 import Logo from "../common/Logo";
+import { HiCog, HiUserCircle, HiOutlineLogout, HiMenu } from "react-icons/hi"
 
 function Header() {
   const navigate = useNavigate();
@@ -15,6 +16,15 @@ function Header() {
   });
 
   const [menuOpen, setMenuOpen] = useState(false);
+  const [username, setUsername] = useState(""); // State mới để lưu tên
+
+  // Lấy username từ localStorage
+  useEffect(() => {
+    const storedUsername = localStorage.getItem("username");
+    if (storedUsername) {
+      setUsername(storedUsername);
+    }
+  }, []);
 
   useEffect(() => {
     if (location.pathname === "/findjobs" && findJobsRef.current) {
@@ -96,6 +106,9 @@ function Header() {
 
         {/* Right - Settings + Profile + Logout */}
         <div className="hidden md:flex items-center space-x-4 p-5 text-gray-600 dark:text-white">
+           <span className="font-semibold text-[#4640DE]">
+              Chào, {username}
+            </span>
           <button
             onClick={handleGoToSettings}
             className="rounded-full p-2 transition hover:bg-gray-100 dark:hover:bg-gray-700"
