@@ -143,7 +143,7 @@
       "email": "123@gmail.com",
       "password": "123",
       "isAdmin": false,
-      "avatar": "https://i.pinimg.com/736x/ac/e7/45/ace7459aee6bfc216337325db4756083.jpg",
+      "avatar": "https://mondialbrand.com/wp-content/uploads/2024/03/anh-anime-0258.jpg",
       "bio": "Junior Backend Developer focusing on Node.js",
       "phone": "+84 900000003",
       "location": "Da Nang, Vietnam",
@@ -178,7 +178,7 @@
       "bio": "",
       "phone": "",
       "location": "",
-      "experienceLevel": "",
+      "experienceLevel": "Senior",
       "role": "",
       "skills": [],
       "socialMedia": [
@@ -213,6 +213,10 @@
         {
           "platform": "snapchat",
           "url": "snapchat.com"
+        },
+        {
+          "platform": "facebook",
+          "url": "https://www.facebook.com/tuanhiep331"
         }
       ],
       "availability": "",
@@ -235,6 +239,31 @@
       "role": "",
       "skills": [],
       "socialMedia": [],
+      "availability": "",
+      "website": "",
+      "badges": [],
+      "tags": [],
+      "isPremium": false
+    },
+    {
+      "id": "262d3d7f-c12f-4176-be4f-48b6e9d9f684",
+      "username": "hiep",
+      "email": "hiep@mail.com",
+      "password": "123",
+      "isAdmin": false,
+      "avatar": "https://i.pinimg.com/736x/ac/e7/45/ace7459aee6bfc216337325db4756083.jpg",
+      "bio": "",
+      "phone": "",
+      "location": "",
+      "experienceLevel": "",
+      "role": "",
+      "skills": [],
+      "socialMedia": [
+        {
+          "platform": "facebook",
+          "url": "facebook.com"
+        }
+      ],
       "availability": "",
       "website": "",
       "badges": [],
