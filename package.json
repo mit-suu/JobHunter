@@ -23,7 +23,7 @@
     "tailwindcss": "^3.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"react-scripts start\" \"npx json-server --watch db.json --port 3001\"",
     "server": "json-server --watch db.json --port 3001",
     "dev": "concurrently \"npm:start\" \"npm:server\"",
     "build": "react-scripts build",
