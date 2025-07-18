@@ -6,7 +6,7 @@ import { HiCog, HiUserCircle, HiOutlineLogout, HiMenu } from "react-icons/hi"
 function Header() {
   const navigate = useNavigate();
   const location = useLocation();
-
+ const role = localStorage.getItem("role");
   const findJobsRef = useRef(null);
   const companiesRef = useRef(null);
   const [indicatorStyle, setIndicatorStyle] = useState({
@@ -101,13 +101,18 @@ function Header() {
             >
               Browse Companies
             </NavLink>
+            {role === "admin" && (
+          <NavLink to="/admin" className="text-red-600 font-semibold">
+            Admin Management
+          </NavLink>
+        )}
           </nav>
         </div>
 
         {/* Right - Settings + Profile + Logout */}
         <div className="hidden md:flex items-center space-x-4 p-5 text-gray-600 dark:text-white">
            <span className="font-semibold text-[#4640DE]">
-              Chào, {username}
+              Hello, {username}
             </span>
           <button
             onClick={handleGoToSettings}

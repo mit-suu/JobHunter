@@ -6,7 +6,7 @@ function CategoryItem({ icon, label, jobs }) {
 
   return (
     <Link to={`/category/${label}`}>
-      <div className="group flex cursor-pointer flex-col justify-center gap-y-[24px] rounded-md bg-white p-[24px] font-poppins text-[#4640DE] transition hover:bg-[#4640DE] ">
+      <div className="group flex cursor-pointer flex-col justify-center gap-y-[24px] rounded-md bg-white p-[24px] font-poppins text-[#4640DE] transition hover:bg-[#4640DE] border dark:border-none">
         <div className="text-2xl group-hover:text-white">{icon}</div>
         <div>
           <h3 className="mb-1 text-base font-semibold text-[#25324B] group-hover:text-white">

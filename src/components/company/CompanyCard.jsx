@@ -6,7 +6,7 @@ function CompanyCard({ company }) {
 
   return (
     <div className="group relative overflow-hidden rounded-lg border border-gray-200 bg-white p-6 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl dark:border-gray-700 dark:bg-gray-800">
-      <div className="mb-4 inline-block rounded-md bg-gray-100 p-3 dark:bg-gray-900">
+      <div className="mb-4 inline-block rounded-md bg-gray-100 p-3 ">
         <img src={logo} alt={`${name} logo`} className="h-10 w-10 object-contain" />
       </div>
       <h3 className="text-lg font-bold text-gray-900 dark:text-white">{name}</h3>

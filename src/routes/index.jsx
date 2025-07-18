@@ -20,6 +20,7 @@ import BrowseCompanyPage from "../pages/jobs/BrowseCompanyPage";
 import CompanyListJob from "../pages/jobs/CompanyJobsList";
 import ProfilePage from "../pages/ProfilePage";
 import CategoryPage from "../pages/jobs/CategoryPage";
+import UserEditPage from "../pages/admin/UserEditPage"
 const AppRoutes = () => {
   return (
     <AnimatePresence mode="wait">
@@ -97,7 +98,16 @@ const AppRoutes = () => {
                 </PrivateRoute>
               }
             />
+            <Route
+  path="/users/:id"
+  element={
+    <PrivateRoute roleRequired="admin">
+      <UserEditPage  />
+    </PrivateRoute>
+  }
+/>
           </Route>
+          
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
