@@ -7,8 +7,8 @@ import UserBioDetails from "../components/profile/UserBioDetails";
 import SocialMediaList from "../components/profile/SocialMediaList";
 
 
-const CLOUDINARY_CLOUD_NAME = "dxhme9fag"; 
-const CLOUDINARY_UPLOAD_PRESET = "Assignment";
+const CLOUDINARY_CLOUD_NAME = process.env.REACT_APP_CLOUDINARY_CLOUD_NAME; 
+const CLOUDINARY_UPLOAD_PRESET = process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET;
 
 
 

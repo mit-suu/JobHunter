@@ -46,7 +46,7 @@
       "email": "user01@example.com",
       "password": "123456",
       "isAdmin": false,
-      "avatar": "https://res.cloudinary.com/dxhme9fag/image/upload/v1752727156/fjecahmwki39crmi1ziy.jpg",
+      "avatar": "https://res.cloudinary.com/dxhme9fag/image/upload/v1752798286/iqpccahjhbzdujoluuvj.jpg",
       "bio": "",
       "phone": "",
       "location": "",
@@ -273,6 +273,123 @@
       "badges": [],
       "tags": [],
       "isPremium": false
+    },
+    {
+      "id": "3046df5b-d485-426b-9c32-cc2fe0086996",
+      "username": "tuanhiep331",
+      "email": "hiepttde170600@fpt.edu.vn",
+      "password": "123",
+      "isAdmin": false,
+      "avatar": "",
+      "bio": "",
+      "phone": "",
+      "location": "",
+      "experienceLevel": "",
+      "role": "",
+      "skills": [],
+      "socialMedia": [],
+      "availability": "",
+      "website": "",
+      "badges": [],
+      "tags": [],
+      "isPremium": false
+    },
+    {
+      "id": "262d3d7f-c12f-4176-be4f-48b6e9d9f684",
+      "username": "hiep",
+      "email": "hiep@mail.com",
+      "password": "123",
+      "isAdmin": false,
+      "avatar": "https://i.pinimg.com/736x/ac/e7/45/ace7459aee6bfc216337325db4756083.jpg",
+      "bio": "",
+      "phone": "",
+      "location": "",
+      "experienceLevel": "",
+      "role": "",
+      "skills": [],
+      "socialMedia": [
+        {
+          "platform": "facebook",
+          "url": "facebook.com"
+        }
+      ],
+      "availability": "",
+      "website": "",
+      "badges": [],
+      "tags": [],
+      "isPremium": false
+    },
+    {
+      "id": "111399206735886939560",
+      "username": "F-LC Offcial",
+      "email": "kikaxibo@gmail.com",
+      "password": "",
+      "isAdmin": false,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKGegntoRzd5sgajjBR_aIvX3-CNjrpn5F-DJUOeEC4SvYBiS0=s96-c",
+      "role": "",
+      "bio": "",
+      "phone": "",
+      "location": "",
+      "skills": [],
+      "socialMedia": [],
+      "isPremium": false
+    },
+    {
+      "id": "a0d8",
+      "password": "",
+      "isAdmin": false,
+      "role": "",
+      "bio": "",
+      "phone": "",
+      "location": "",
+      "skills": [],
+      "socialMedia": [],
+      "isPremium": false
+    },
+    {
+      "id": "114520794823780131927",
+      "username": "Phan Trung Hieu (K17 DN)",
+      "email": "hieuptde170259@fpt.edu.vn",
+      "password": "",
+      "isAdmin": false,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJA21if6gVRjsb57Tn2vY0Sm_uLJczP_6Nac_zLMoI13CZgiYY=s96-c",
+      "role": "user",
+      "bio": "",
+      "phone": "",
+      "location": "",
+      "skills": [],
+      "socialMedia": [],
+      "isPremium": false
+    },
+    {
+      "id": "company-technova-01",
+      "username": "TechNova",
+      "email": "hr@technova.com",
+      "password": "password123",
+      "isAdmin": false,
+      "avatar": "https://images.seeklogo.com/logo-png/27/1/node-js-logo-png_seeklogo-273749.png",
+      "bio": "A leading technology firm specializing in innovative full-stack solutions with Node.js and React.",
+      "phone": "+84 28 3825 1234",
+      "location": "Ho Chi Minh City, Vietnam",
+      "experienceLevel": "",
+      "role": "Company",
+      "skills": [],
+      "socialMedia": [
+        {
+          "platform": "website",
+          "url": "https://technova.example.com"
+        }
+      ],
+      "availability": "",
+      "website": "https://technova.example.com",
+      "badges": [
+        "Top Employer"
+      ],
+      "tags": [
+        "#Tech",
+        "#Innovation"
+      ],
+      "isPremium": true
     }
   ],
   "jobs": [
@@ -289,7 +406,7 @@
       ],
       "level": "Mid Level",
       "salaryRange": "$1500 - $2500",
-      "applied": 8,
+      "applied": 12,
       "capacity": 15,
       "jobDescription": "We are looking for a talented Fullstack Developer proficient in Node.js and React.",
       "requirements": "- 3+ years experience with Node.js and React\n- Familiar with REST API\n- Experience with MongoDB and PostgreSQL",
@@ -477,7 +594,7 @@
       ],
       "level": "Mid Level",
       "salaryRange": "$1300 - $2200",
-      "applied": 7,
+      "applied": 8,
       "capacity": 12,
       "jobDescription": "Seeking a creative UI/UX Designer to improve user experience.",
       "requirements": "- Experience with Figma or Adobe XD\n- Knowledge of user research\n- Strong portfolio",
@@ -2216,6 +2333,18 @@
         "Graphic",
         "Design"
       ]
+    }
+  ],
+  "applications": [
+    {
+      "id": "dd46",
+      "jobId": "1",
+      "userId": "2",
+      "companyName": "TechNova",
+      "coverLetter": "",
+      "cvUrl": "https://res.cloudinary.com/dxhme9fag/image/upload/v1752802048/bfaaypj3h6pugdlxguwp.pdf",
+      "status": "Pending",
+      "appliedDate": "2025-07-18T01:27:24.456Z"
     }
   ]
 }

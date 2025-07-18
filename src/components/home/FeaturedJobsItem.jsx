@@ -1,8 +1,10 @@
+import {Link } from 'react-router-dom';
 function FeaturedJobsItem({ job }) {
   const { logo, title, company, location, type, categories } = job;
 
   return (
-    <div className="flex h-full min-w-[250px] transform flex-col justify-between border border-[#EDEDED] bg-white px-5 py-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl rounded-lg">
+    <Link to={`/jobs/${job.id}`} className="block">
+        <div className="flex h-full min-w-[250px] transform flex-col justify-between border border-[#EDEDED] bg-white px-5 py-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-xl rounded-lg">
       {/* Nội dung phía trên */}
       <div className="flex-1">
         {/* Header row */}
@@ -36,6 +38,7 @@ function FeaturedJobsItem({ job }) {
         ))}
       </div>
     </div>
+    </Link>
   );
 }
 

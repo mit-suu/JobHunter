@@ -11,3 +11,23 @@ export const getJobs = async () => {
     return [];
   }
 };
+
+export const getJobById = async (id) => {
+    try {
+        const response = await axios.get(`${API_BASE_URL}/jobs/${id}`);
+        return response.data;
+    } catch (error) {
+        console.error(`Lỗi khi lấy job ID ${id}:`, error);
+        return null;
+    }
+};
+
+export const updateJob = async (id, updatedFields) => {
+    try {
+        const response = await axios.patch(`${API_BASE_URL}/jobs/${id}`, updatedFields);
+        return response.data;
+    } catch (error) {
+        console.error(`Lỗi khi cập nhật job ID ${id}:`, error);
+        return null;
+    }
+};
