@@ -15,6 +15,7 @@ import FindJobsPage from "../pages/jobs/FindJobsPage";
 import BrowseCompanyPage from "../pages/jobs/BrowseCompanyPage";
 import CompanyJobsList from "../pages/jobs/CompanyJobsList";
 import CategoryPage from "../pages/jobs/CategoryPage";
+import UserEditPage from "../pages/admin/UserEditPage"
 import SettingsPage from "../pages/settings/SettingPage";
 import ProfilePage from "../pages/ProfilePage";
 import NotFoundPage from "../pages/NotFoundPage";
@@ -64,7 +65,16 @@ function AppRoutes() {
                 </PrivateRoute>
               }
             />
+            <Route
+  path="/users/:id"
+  element={
+    <PrivateRoute roleRequired="admin">
+      <UserEditPage  />
+    </PrivateRoute>
+  }
+/>
           </Route>
+          
 
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

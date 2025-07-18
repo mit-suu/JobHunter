@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 function Hero() {
   return (
     <section className="relative bg-[#F8F8FD] py-16 dark:bg-[#202430]">
-      {/* BG image chỉ hiện ở light mode */}
       <div className="absolute inset-0 z-0 block dark:hidden">
         <img
           src="/img/bg1.svg"

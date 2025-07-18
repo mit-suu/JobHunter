@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { HiPencil } from "react-icons/hi";
+import { FiStar, FiLock, FiX } from "react-icons/fi";
 
 function AvatarCard({ user, onAvatarUpload, isUploading }) {
   const fileInputRef = useRef(null);
@@ -49,8 +50,23 @@ function AvatarCard({ user, onAvatarUpload, isUploading }) {
       
       {isUploading && <p className="mt-4 animate-pulse text-sm font-semibold text-purple-600 dark:text-purple-400">Uploading...</p>}
       
-      <h2 className="mt-4 truncate text-2xl font-bold text-gray-900 dark:text-white">{user.username}</h2>
-      <p className="text-sm text-gray-500 dark:text-gray-400">{user.role || 'Member'}</p>
+      {/* Name & Premium */}
+      <div className="m-4 text-center">
+        <h2 className="text-3xl font-bold">
+          {user.username.charAt(0).toUpperCase() + user.username.slice(1)}
+        </h2>
+        <div className="mt-1 flex items-center justify-center">
+          {user.isPremium ? (
+            <span className="flex items-center gap-1 text-sm font-medium text-green-600">
+              <FiStar className="h-4 w-4" /> Premium User
+            </span>
+          ) : (
+            <span className="flex items-center gap-1 text-sm font-medium text-gray-400">
+              <FiLock className="h-4 w-4" /> Standard User
+            </span>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

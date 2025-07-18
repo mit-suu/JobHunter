@@ -15,7 +15,8 @@
       "skills": [
         "Management",
         "Security",
-        "DevOps"
+        "DevOps",
+        "TailwindCSS"
       ],
       "socialMedia": [
         {
@@ -51,13 +52,59 @@
       "location": "",
       "experienceLevel": "",
       "role": "",
-      "skills": [],
+      "skills": [
+        "Security",
+        "TailwindCSS",
+        "DevOps"
+      ],
       "socialMedia": [],
       "availability": "",
       "website": "",
       "badges": [],
       "tags": [],
       "isPremium": false
+    },
+    {
+      "id": "3321",
+      "username": "trantuanhiep",
+      "email": "trantuanhiep@gmail.com",
+      "password": "123",
+      "isAdmin": false,
+      "avatar": "https://res.cloudinary.com/dxhme9fag/image/upload/v1752822616/dokzdnvmn0haugwjlq36.png",
+      "bio": "A passionate fullstack developer based in Vietnam.",
+      "phone": "+84 912345678",
+      "location": "Ho Chi Minh City",
+      "experienceLevel": "Mid-Level",
+      "role": "Frontend Developer",
+      "skills": [
+        "React",
+        "Node.js",
+        "TailwindCSS",
+        "JavaScript",
+        "TypeScript"
+      ],
+      "socialMedia": [
+        {
+          "platform": "facebook",
+          "url": "https://facebook.com/trantuanhiep"
+        },
+        {
+          "platform": "github",
+          "url": "https://github.com/trantuanhiep"
+        }
+      ],
+      "availability": "Available",
+      "website": "https://trantuanhiep.dev",
+      "badges": [
+        "Top Rated",
+        "Verified"
+      ],
+      "tags": [
+        "#FullStack",
+        "#ReactJS",
+        "#Premium"
+      ],
+      "isPremium": true
     },
     {
       "id": "3",
@@ -74,7 +121,9 @@
       "skills": [
         "ReactJS",
         "TailwindCSS",
-        "Figma"
+        "Figma",
+        "ReactJS",
+        "DevOps"
       ],
       "socialMedia": [
         {
