@@ -1,4 +1,5 @@
 import Button from ".././common/Button";
+import {Link } from 'react-router-dom';
 
 function JobCard({ job }) {
   const {
@@ -15,7 +16,9 @@ function JobCard({ job }) {
   const appliedPercent = Math.min((applied / capacity) * 100, 100);
 
   return (
-    <div className="mb-4 flex items-center justify-between rounded-sm border border-gray-200 bg-white p-4 transition hover:shadow-md  dark:bg-white">
+    
+    <Link to={`/jobs/${job.id}`} className="block">
+       <div className="mb-4 flex items-center justify-between rounded-sm border border-gray-200 bg-white p-4 transition hover:shadow-md  dark:bg-white">
       {/* Left - Info */}
       <div className="flex items-center gap-6 font-Epilogue">
         <div className="flex h-14 w-14 items-center justify-center">
@@ -67,7 +70,8 @@ function JobCard({ job }) {
           capacity
         </p>
       </div>
-    </div>
+    </div> 
+    </Link>
   );
 }
 

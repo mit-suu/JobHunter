@@ -1,4 +1,5 @@
 import Button from "../common/Button";
+import {Link } from 'react-router-dom';
 
 const CATEGORY_STYLES = {
   Design: "border-[#FFB836] text-[#FFB836]",
@@ -25,7 +26,10 @@ function JobCardByCat({ job }) {
   const appliedPercent = Math.min((applied / capacity) * 100, 100);
 
   return (
-    <div className="flex h-full min-h-[250px] flex-col justify-between space-y-10 rounded border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+    
+
+    <Link to={`/jobs/${job.id}`} className="block">
+        <div className="flex h-full min-h-[250px] flex-col justify-between space-y-10 rounded border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
       {/* TOP: Logo + Info */}
       <div className="mb-4 flex items-start gap-4">
         <div className="h-12 w-12 flex-shrink-0">
@@ -78,6 +82,7 @@ function JobCardByCat({ job }) {
         </div>
       </div>
     </div>
+    </Link>
   );
 }
 
