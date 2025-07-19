@@ -205,7 +205,8 @@ function JobDetailPage() {
                                     )}
                                 </button>
                                 <div className="mt-6 space-y-4 border-t border-slate-200 pt-6 dark:border-slate-700">
-                                    <DetailItem icon={<HiOutlineCalendarDays />} label="Date Posted" value={new Date(job.postedDate).toLocaleDateString()} />
+                                    <DetailItem icon={<HiOutlineCalendarDays />} label="Date Posted" value={new Date(job.postedDate).toLocaleDateString()} />      
+                                    <DetailItem icon={<HiOutlineCalendarDays />} label="Deadline" value={new Date(job.deadline).toLocaleDateString()} />
                                     <DetailItem icon={<HiOutlineBuildingOffice2 />} label="Company" value={job.company} />
                                 </div>
                                 <Link to="/findjobs" className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-md border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-700">

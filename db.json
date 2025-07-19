@@ -6,11 +6,11 @@
       "email": "admin@example.com",
       "password": "123",
       "isAdmin": true,
-      "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOcyiIW9V7-y1SIZtC4R0ypCPXkRwH9HBovg&s",
+      "avatar": "https://res.cloudinary.com/dxhme9fag/image/upload/v1752828674/ktik6ryocb4vpgdhunv2.jpg",
       "bio": "Updated Bio!",
-      "phone": "+84 900000001",
+      "phone": "0355023845",
       "location": "Da Nang",
-      "experienceLevel": "Senior",
+      "experienceLevel": "Fresher",
       "role": "Admin",
       "skills": [
         "Management",
@@ -335,18 +335,6 @@
       "isPremium": false
     },
     {
-      "id": "a0d8",
-      "password": "",
-      "isAdmin": false,
-      "role": "",
-      "bio": "",
-      "phone": "",
-      "location": "",
-      "skills": [],
-      "socialMedia": [],
-      "isPremium": false
-    },
-    {
       "id": "114520794823780131927",
       "username": "Phan Trung Hieu (K17 DN)",
       "email": "hieuptde170259@fpt.edu.vn",
@@ -406,13 +394,13 @@
       ],
       "level": "Mid Level",
       "salaryRange": "$1500 - $2500",
-      "applied": 12,
+      "applied": 13,
       "capacity": 15,
       "jobDescription": "We are looking for a talented Fullstack Developer proficient in Node.js and React.",
       "requirements": "- 3+ years experience with Node.js and React\n- Familiar with REST API\n- Experience with MongoDB and PostgreSQL",
       "benefits": "- Competitive salary\n- Health insurance\n- Flexible working hours",
       "postedDate": "2025-06-20",
-      "deadline": "2025-07-31",
+      "deadline": "2025-01-03",
       "contactEmail": "hr@technova.com",
       "howToApply": "Send your CV to hr@technova.com with subject 'Fullstack Developer Application'",
       "isRemote": true,
@@ -443,7 +431,7 @@
       "requirements": "- 5+ years of Java experience\n- Strong knowledge of Spring Boot\n- Familiar with Microservices architecture",
       "benefits": "- 13th month salary\n- Premium healthcare\n- Training budget",
       "postedDate": "2025-06-21",
-      "deadline": "2025-08-01",
+      "deadline": "2025-01-01",
       "contactEmail": "jobs@innovatech.vn",
       "howToApply": "Submit your application at innovatech.vn/careers",
       "isRemote": false,
@@ -2345,6 +2333,16 @@
       "cvUrl": "https://res.cloudinary.com/dxhme9fag/image/upload/v1752802048/bfaaypj3h6pugdlxguwp.pdf",
       "status": "Pending",
       "appliedDate": "2025-07-18T01:27:24.456Z"
+    },
+    {
+      "id": "5480",
+      "jobId": "1",
+      "userId": "2",
+      "companyName": "TechNova",
+      "coverLetter": "abc",
+      "cvUrl": "https://res.cloudinary.com/dxhme9fag/image/upload/v1752830578/xwastt9xaqrammvcpgw1.pdf",
+      "status": "Pending",
+      "appliedDate": "2025-07-18T09:22:57.385Z"
     }
   ]
 }
