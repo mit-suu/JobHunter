@@ -22,29 +22,40 @@ function JobList({ filters }) {
     fetchJobs();
   }, []);
 
-  useEffect(() => {
-    const result = allJobs.filter((job) => {
-      const typeMatch = filters.type.includes(job.type);
-      const categoryMatch = filters.categories.some((cat) =>
-        job.categories.includes(cat),
-      );
-      const levelMatch = filters.level.includes(job.level);
-      const salaryMatch = filters.salaryRange.includes(job.salaryRange);
+useEffect(() => {
+  const cutoffDate = new Date("2025-07-18");
 
-      const hasAnyFilter =
-        filters.type.length > 0 ||
-        filters.categories.length > 0 ||
-        filters.level.length > 0 ||
-        filters.salaryRange.length > 0;
+  const result = allJobs.filter((job) => {
+    // Skip jobs with deadline after the cutoff
+    const jobDeadline = new Date(job.deadline);
+    if (jobDeadline < cutoffDate) return false;
 
-      return (
-        !hasAnyFilter || typeMatch || categoryMatch || levelMatch || salaryMatch
-      );
-    });
+    const typeMatch = filters.type.includes(job.type);
+    const categoryMatch = filters.categories.some((cat) =>
+      job.categories.includes(cat)
+    );
+    const levelMatch = filters.level.includes(job.level);
+    const salaryMatch = filters.salaryRange.includes(job.salaryRange);
 
-    setFilteredJobs(result);
-    setCurrentPage(1);
-  }, [filters, allJobs]);
+    const hasAnyFilter =
+      filters.type.length > 0 ||
+      filters.categories.length > 0 ||
+      filters.level.length > 0 ||
+      filters.salaryRange.length > 0;
+
+    return (
+      !hasAnyFilter ||
+      typeMatch ||
+      categoryMatch ||
+      levelMatch ||
+      salaryMatch
+    );
+  });
+
+  setFilteredJobs(result);
+  setCurrentPage(1);
+}, [filters, allJobs]);
+
 
   const indexOfLastJob = currentPage * jobsPerPage;
   const indexOfFirstJob = indexOfLastJob - jobsPerPage;
@@ -52,6 +63,7 @@ function JobList({ filters }) {
   const totalPages = Math.ceil(filteredJobs.length / jobsPerPage);
 
   return (
+    
     <div className="flex-1">
       <h1 className="mb-6 text-2xl font-bold text-gray-800 dark:text-gray-100">
         All Jobs
