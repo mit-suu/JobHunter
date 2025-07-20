@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { addUser } from "../../services/userService";
+import { getUsers } from "../../services/userService";
 import { Link } from "react-router-dom";
 import { createDefaultUser } from "../../utils/entitiesUtils";
 import Button from "../../components/common/Button";
@@ -13,25 +14,40 @@ function RegisterPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const handleRegister = async (e) => {
-    e.preventDefault();
+ const handleRegister = async (e) => {
+  e.preventDefault();
 
-    const newUser = createDefaultUser({
-      username,
-      email,
-      password,
-      isAdmin: false,
-    });
+  const allUsers = await getUsers();
 
-    const createdUser = await addUser(newUser);
+  const isUsernameTaken = allUsers.some((user) => user.username === username);
+  const isEmailTaken = allUsers.some((user) => user.email === email);
 
-    if (createdUser) {
-      alert("Đăng ký thành công! Mời bạn đăng nhập.");
-      navigate("/login");
-    } else {
-      alert("Có lỗi xảy ra khi đăng ký!");
-    }
-  };
+  if (isUsernameTaken) {
+    alert("Username already exists. Please choose another one.");
+    return;
+  }
+
+  if (isEmailTaken) {
+    alert("Email already registered. Please use another email.");
+    return;
+  }
+
+  const newUser = createDefaultUser({
+    username,
+    email,
+    password,
+    isAdmin: false,
+  });
+
+  const createdUser = await addUser(newUser);
+
+  if (createdUser) {
+    alert("Đăng ký thành công! Mời bạn đăng nhập.");
+    navigate("/login");
+  } else {
+    alert("Có lỗi xảy ra khi đăng ký!");
+  }
+};
 
   return (
     <motion.div
