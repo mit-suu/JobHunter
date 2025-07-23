@@ -31,11 +31,20 @@ function JobDetailPage() {
             const jobData = await getJobById(jobId);
             setJob(jobData);
 
-            // Kiểm tra xem user đã apply job này từ localStorage chưa
-            const appliedJobs = JSON.parse(localStorage.getItem('appliedJobs') || '[]');
-            if (appliedJobs.includes(jobId)) {
-                setApplied(true);
+            // <=====BẮT ĐẦU SỬA======>
+            // Lấy userId của người dùng đang đăng nhập
+            const userId = localStorage.getItem('userId');
+            if (userId) {
+                // Tạo một key riêng cho mỗi user trong localStorage
+                const userAppliedJobsKey = `appliedJobs_${userId}`;
+                const appliedJobs = JSON.parse(localStorage.getItem(userAppliedJobsKey) || '[]');
+                
+                if (appliedJobs.includes(jobId)) {
+                    setApplied(true);
+                }
             }
+            // <=====KẾT THÚC SỬA======>
+            
             setLoading(false);
         };
 
@@ -53,10 +62,12 @@ function JobDetailPage() {
         const formData = new FormData();
         formData.append("file", cvFile);
         formData.append("upload_preset", CLOUDINARY_UPLOAD_PRESET);
+        formData.append("resource_type", "auto");
+
 
         try {
-             const uploadResponse = await fetch(
-                `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`,
+            const uploadResponse = await fetch( 
+                `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/auto/upload`,
                 { method: "POST", body: formData }
             );
             
@@ -83,8 +94,16 @@ function JobDetailPage() {
             setJob(updatedJob);
             setApplied(true);
 
-            const appliedJobs = JSON.parse(localStorage.getItem('appliedJobs') || '[]');
-            localStorage.setItem('appliedJobs', JSON.stringify([...appliedJobs, jobId]));
+            // <=====BẮT ĐẦU SỬA======>
+            // Lưu trạng thái đã apply vào key riêng của user
+            const userId = localStorage.getItem('userId');
+            if (userId) {
+                const userAppliedJobsKey = `appliedJobs_${userId}`;
+                const appliedJobs = JSON.parse(localStorage.getItem(userAppliedJobsKey) || '[]');
+                localStorage.setItem(userAppliedJobsKey, JSON.stringify([...appliedJobs, jobId]));
+            }
+            // <=====KẾT THÚC SỬA======>
+
 
             alert('Application submitted successfully!');
             setIsModalOpen(false);
@@ -205,7 +224,7 @@ function JobDetailPage() {
                                     )}
                                 </button>
                                 <div className="mt-6 space-y-4 border-t border-slate-200 pt-6 dark:border-slate-700">
-                                    <DetailItem icon={<HiOutlineCalendarDays />} label="Date Posted" value={new Date(job.postedDate).toLocaleDateString()} />      
+                                    <DetailItem icon={<HiOutlineCalendarDays />} label="Date Posted" value={new Date(job.postedDate).toLocaleDateString()} />
                                     <DetailItem icon={<HiOutlineCalendarDays />} label="Deadline" value={new Date(job.deadline).toLocaleDateString()} />
                                     <DetailItem icon={<HiOutlineBuildingOffice2 />} label="Company" value={job.company} />
                                 </div>
