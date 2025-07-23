@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-
+import { useTranslation } from "react-i18next";
 function Hero() {
+    const { t } = useTranslation();
   return (
     <section className="relative bg-[#F8F8FD] py-16 dark:bg-[#202430]">
       <div className="absolute inset-0 z-0 block dark:hidden">
@@ -24,14 +25,13 @@ function Hero() {
           </span>
         </h1>
 
-        <p className="my-6 text-left text-sm sm:text-base md:text-lg text-gray-500">
-          Great platform for the job seeker that searching for new career
-          heights and passionate about startups.
+         <p className="my-6 text-left text-sm sm:text-base md:text-lg text-gray-500">
+          {t("hero.subtitle")}
         </p>
 
         <div>
           <p className="font-poppins text-lg sm:text-xl md:text-2xl font-bold tracking-wide text-gray-700 dark:text-white">
-            Have you wanted to find a new job for yourself?
+            {t("hero.question")}
           </p>
 
           <div className="mt-3">
@@ -39,13 +39,12 @@ function Hero() {
               to="/findjobs"
               className="inline-block rounded-3xl bg-blue-600 px-5 py-2 sm:px-6 sm:py-3 font-poppins text-sm sm:text-base font-bold text-white shadow transition hover:bg-blue-700"
             >
-              Let Started
+              {t("hero.button")}
             </Link>
           </div>
 
           <p className="mt-6 sm:mt-9 font-Epilogue text-sm sm:text-base font-light text-[#202430] dark:text-white/80">
-            Popular roles by Tuan Hiep: UI Designer · UX Researcher · Front-end
-            Developer · Admin
+            {t("hero.roles")}
           </p>
         </div>
       </div>

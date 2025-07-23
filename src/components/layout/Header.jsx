@@ -1,9 +1,11 @@
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { useRef, useState, useEffect } from "react";
 import Logo from "../common/Logo";
-import { HiCog, HiUserCircle, HiOutlineLogout, HiMenu } from "react-icons/hi"
+import { useTranslation } from "react-i18next";
+
 
 function Header() {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();
  const role = localStorage.getItem("role");
@@ -88,7 +90,7 @@ function Header() {
                   : "text-gray-600 transition-colors hover:text-[#4640DE] dark:text-white"
               }
             >
-              Find Jobs
+             {t("header.find_jobs")}
             </NavLink>
             <NavLink
               to="/companies"
@@ -99,7 +101,7 @@ function Header() {
                   : "text-gray-600 transition-colors hover:text-[#4640DE] dark:text-white"
               }
             >
-              Browse Companies
+             {t("header.browse_companies")}
             </NavLink>
             {role === "admin" && (
           <NavLink to="/admin" className="text-red-600 font-semibold">
@@ -141,7 +143,7 @@ function Header() {
             onClick={handleLogout}
             className="rounded-md bg-gradient-to-r from-[#6A5AE0] via-[#4640DE] to-[#3a35c9] px-6 py-2 font-semibold text-white transition-all duration-200 hover:opacity-90"
           >
-            Logout
+            {t("header.logout")}
           </button>
         </div>
 
