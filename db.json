@@ -53,16 +53,25 @@
       "experienceLevel": "",
       "role": "",
       "skills": [
-        "Security",
-        "TailwindCSS",
-        "DevOps"
+        "Agile",
+        "GraphQL"
       ],
       "socialMedia": [],
       "availability": "",
       "website": "",
       "badges": [],
       "tags": [],
-      "isPremium": false
+      "isPremium": false,
+      "cvs": [
+        {
+          "name": "PhanTrungHieu_CV_ReactIntern.pdf",
+          "url": "https://res.cloudinary.com/dxhme9fag/image/upload/v1753237367/t3syfxnownw1l0yjueg9.pdf"
+        },
+        {
+          "name": "PhanTrungHieu_CV_ReactIntern.pdf",
+          "url": "https://res.cloudinary.com/dxhme9fag/image/upload/v1753243280/tacoalymkw8gwbuwomou.pdf"
+        }
+      ]
     },
     {
       "id": "3321",
@@ -378,6 +387,36 @@
         "#Innovation"
       ],
       "isPremium": true
+    },
+    {
+      "id": "110182294057075899348",
+      "username": "Mai Đoàn",
+      "email": "maimaipro2508@gmail.com",
+      "password": "",
+      "isAdmin": false,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocKpBIym8w6rUxKdmWASVBDm9xL1GQd5gKw6a3jDP3iIFAV_Ng=s96-c",
+      "role": "user",
+      "bio": "",
+      "phone": "",
+      "location": "",
+      "skills": [],
+      "socialMedia": [],
+      "isPremium": false
+    },
+    {
+      "id": "108461942530086708345",
+      "username": "Trung Hiếu Phan",
+      "email": "phantrunghieu3101@gmail.com",
+      "password": "",
+      "isAdmin": false,
+      "avatar": "https://lh3.googleusercontent.com/a/ACg8ocJrOO1QdQoKQx6N1npu8i5qLUq3f0sCzMyyYndm1eklFOOr9w=s96-c",
+      "role": "user",
+      "bio": "",
+      "phone": "",
+      "location": "",
+      "skills": [],
+      "socialMedia": [],
+      "isPremium": false
     }
   ],
   "jobs": [
@@ -394,13 +433,13 @@
       ],
       "level": "Mid Level",
       "salaryRange": "$1500 - $2500",
-      "applied": 13,
+      "applied": 14,
       "capacity": 15,
       "jobDescription": "We are looking for a talented Fullstack Developer proficient in Node.js and React.",
       "requirements": "- 3+ years experience with Node.js and React\n- Familiar with REST API\n- Experience with MongoDB and PostgreSQL",
       "benefits": "- Competitive salary\n- Health insurance\n- Flexible working hours",
       "postedDate": "2025-06-20",
-      "deadline": "2025-01-03",
+      "deadline": "2026-01-03",
       "contactEmail": "hr@technova.com",
       "howToApply": "Send your CV to hr@technova.com with subject 'Fullstack Developer Application'",
       "isRemote": true,
@@ -2325,24 +2364,14 @@
   ],
   "applications": [
     {
-      "id": "dd46",
+      "id": "2555",
       "jobId": "1",
-      "userId": "2",
+      "userId": "108461942530086708345",
       "companyName": "TechNova",
       "coverLetter": "",
-      "cvUrl": "https://res.cloudinary.com/dxhme9fag/image/upload/v1752802048/bfaaypj3h6pugdlxguwp.pdf",
+      "cvUrl": "https://res.cloudinary.com/dxhme9fag/image/upload/v1753237090/ecwp41fpyv0msrmsyi4z.pdf",
       "status": "Pending",
-      "appliedDate": "2025-07-18T01:27:24.456Z"
-    },
-    {
-      "id": "5480",
-      "jobId": "1",
-      "userId": "2",
-      "companyName": "TechNova",
-      "coverLetter": "abc",
-      "cvUrl": "https://res.cloudinary.com/dxhme9fag/image/upload/v1752830578/xwastt9xaqrammvcpgw1.pdf",
-      "status": "Pending",
-      "appliedDate": "2025-07-18T09:22:57.385Z"
+      "appliedDate": "2025-07-23T02:18:11.167Z"
     }
   ]
 }

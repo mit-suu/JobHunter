@@ -7,6 +7,8 @@ import LatestJobsList from "../../components/home/LatestJobsList";
 import ChatToggleButton from "../../components/chatbot/ChatToggleButton";
 import ChatBox from "../../components/chatbot/ChatBox";
 import { motion } from "framer-motion";
+import AIRecommendationSection from "../../components/home/AIRecommendationSection"; // Import component mới
+
 
 function HomePage() {
    const [showChat, setShowChat] = useState(false);
@@ -27,6 +29,7 @@ function HomePage() {
     </>
         <Hero />
         <CategoryList />
+        <AIRecommendationSection />
         <CTA />
         <FeaturedJobsList />
         <LatestJobsList />
