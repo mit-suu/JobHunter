@@ -1,0 +1,50 @@
+{
+  "header": {
+    "find_jobs": "Find Jobs",
+    "browse_companies": "Browse Companies",
+    "admin": "Admin Management",
+    "hello": "Hello",
+    "settings": "Settings",
+    "profile": "Profile",
+    "logout": "Logout",
+    "alert_logout": "You have successfully logged out!",
+    "alert_user_not_found": "User ID not found!"
+  },
+  "footer": {
+    "intro": "Great platform for the job seeker that passionate about startups. Find your dream job easier.",
+    "about": "About",
+    "resources": "Resources",
+    "about_links": {
+      "0": "Company",
+      "1": "Our Team",
+      "2": "Careers",
+      "3": "Contact"
+    },
+    "resource_links": {
+      "0": "Blog",
+      "1": "Help Center",
+      "2": "Privacy Policy",
+      "3": "Terms & Conditions"
+    },
+    "subscribe_title": "Get job notifications",
+    "subscribe_desc": "The latest job news, articles, sent to your inbox weekly.",
+    "placeholder_email": "Email Address",
+    "subscribe_button": "Subscribe",
+    "copyright": "2025 © Tran Tuan Hiep. All rights reserved."
+  },"hero": {
+    "title_line1": "Discover more than",
+    "title_highlight": "5000+ Jobs",
+    "subtitle": "Great platform for the job seeker that searching for new career heights and passionate about startups.",
+    "question": "Have you wanted to find a new job for yourself?",
+    "button": "Let's Get Started",
+    "roles": "Popular roles by Tuan Hiep: UI Designer · UX Researcher · Front-end Developer · Admin"
+  },
+"settings": {
+    "title": "Settings",
+    "theme": "Theme:",
+    "switch_to_dark": "Switch to Dark Mode",
+    "switch_to_light": "Switch to Light Mode",
+    "back_home": "Back to Home",
+    "language":"Language"
+  }
+}

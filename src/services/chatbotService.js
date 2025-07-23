@@ -6,7 +6,7 @@ const API_KEY = process.env.REACT_APP_API_KEY_CHATBOX; // hoặc process.env.REA
 export async function sendChatMessage(message, model) {
   if (!message || !model) {
     console.error("Missing message or model in sendChatMessage");
-    return "⚠️ Missing message or model.";
+    return "Missing message or model.";
   }
 
   try {
@@ -17,7 +17,7 @@ export async function sendChatMessage(message, model) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model: model, // ✅ Model truyền từ props
+        model: model, 
         messages: [
           { role: "user", content: message }
         ],
@@ -33,6 +33,6 @@ export async function sendChatMessage(message, model) {
     return data.choices?.[0]?.message?.content || "(No response)";
   } catch (error) {
     console.error("Chatbot API error:", error.message);
-    return "⚠️ Error connecting to AI service.";
+    return " Error connecting to AI service.";
   }
 }

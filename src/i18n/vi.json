@@ -1,0 +1,50 @@
+{
+  "header": {
+    "find_jobs": "Tìm việc",
+    "browse_companies": "Công ty",
+    "admin": "Quản trị viên",
+    "hello": "Xin chào",
+    "settings": "Cài đặt",
+    "profile": "Hồ sơ",
+    "logout": "Đăng xuất",
+    "alert_logout": "Bạn đã logout thành công!",
+    "alert_user_not_found": "Không tìm thấy userId!"
+  },"footer": {
+    "intro": "Nền tảng tuyệt vời cho người tìm việc đam mê startup. Tìm việc mơ ước dễ dàng hơn.",
+    "about": "Về chúng tôi",
+    "resources": "Tài nguyên",
+    "about_links": {
+      "0": "Công ty",
+      "1": "Đội ngũ",
+      "2": "Tuyển dụng",
+      "3": "Liên hệ"
+    },
+    "resource_links": {
+      "0": "Blog",
+      "1": "Trung tâm trợ giúp",
+      "2": "Chính sách bảo mật",
+      "3": "Điều khoản"
+    },
+    "subscribe_title": "Nhận thông báo việc làm",
+    "subscribe_desc": "Tin tức và bài viết việc làm mới nhất gửi đến email của bạn hàng tuần.",
+    "placeholder_email": "Địa chỉ Email",
+    "subscribe_button": "Gửi",
+    "copyright": "2025 © Trần Tuấn Hiệp. Bảo lưu mọi quyền."
+  }
+  ,"hero": {
+    "title_line1": "Khám phá hơn",
+    "title_highlight": "5000+ công việc",
+    "subtitle": "Nền tảng lý tưởng cho người tìm việc mong muốn phát triển sự nghiệp và đam mê với các startup.",
+    "question": "Bạn đang muốn tìm một công việc mới cho chính mình?",
+    "button": "Bắt đầu ngay",
+    "roles": "Các vị trí phổ biến bởi Tuấn Hiệp: UI Designer · UX Researcher · Front-end Developer · Quản trị viên"
+  },
+  "settings": {
+    "title": "Cài đặt",
+    "theme": "Giao diện:",
+    "switch_to_dark": "Chuyển sang chế độ tối",
+    "switch_to_light": "Chuyển sang chế độ sáng",
+    "back_home": "Về trang chủ",
+    "language":"Ngôn ngữ"
+  }
+}
