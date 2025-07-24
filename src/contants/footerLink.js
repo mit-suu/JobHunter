@@ -19,7 +19,7 @@ export const socialLinks = [
   },
   {
     icon: "FaDribbble",
-    url: "https://dribbble.com/",
+    url: "https://wild-roots.vercel.app/",
   },
   {
     icon: "FaLinkedinIn",
